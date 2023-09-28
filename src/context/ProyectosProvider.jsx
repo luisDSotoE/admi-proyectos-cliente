@@ -20,6 +20,7 @@ const ProyectosProvider = ({children}) => {
     const [ colaborador, setColaborador] = useState({})
     const [ modalEliminarColaborador, setModalEliminarColaborador] = useState(false)
     const [ buscador, setBuscador] = useState(false)
+    
 
     const navigate = useNavigate();
     const { auth } = useAuth()
@@ -124,7 +125,13 @@ const ProyectosProvider = ({children}) => {
                 navigate('/proyectos')
             }, 3000);
         } catch (error) {
-            console.log(error)
+            setAlerta({
+                msg: error.response.data.msg,
+                error: true
+            })
+            setTimeout(() => {
+                setAlerta({})
+            }, 3000);
         }
     }
 
@@ -186,7 +193,10 @@ const ProyectosProvider = ({children}) => {
                 navigate('/proyectos')
             }, 3000);
         } catch (error) {
-            console.log(error)
+            setAlerta({
+                msg: error.response.data.msg,
+                error: true
+            })
         }
     }
 
@@ -214,7 +224,7 @@ const ProyectosProvider = ({children}) => {
                     Authorization: `Bearer ${token}`
                 }
             }
-
+            
             const { data } = await clienteAxios.post('/tareas', tarea, config)
 
             setAlerta({})
@@ -223,7 +233,10 @@ const ProyectosProvider = ({children}) => {
             // SOCKET IO
             socket.emit('nueva tarea', data)
         } catch (error) {
-            console.log(error)
+            setAlerta({
+                msg: error.response.data.msg,
+                error: true
+            })
         }
     }
 
@@ -247,7 +260,10 @@ const ProyectosProvider = ({children}) => {
             // SOCKET
             socket.emit('actualizar tarea', data)
         } catch (error) {
-            console.log(error)
+            setAlerta({
+                msg: error.response.data.msg,
+                error: true
+            })
         }
     }
 

@@ -9,6 +9,8 @@ const ConfirmarCuenta = () => {
   const [alerta, setAlerta] = useState({})
   const [cuentaConfirmada, setCuentaConfirmada] = useState(false)
 
+  const navigate = useNavigate()
+
   const params = useParams();
   const { id } = params
 
@@ -32,6 +34,8 @@ const ConfirmarCuenta = () => {
       }
     }
     confirmarCuenta();
+    navigate('/')
+    
   }, [])
 
   const { msg } = alerta

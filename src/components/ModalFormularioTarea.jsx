@@ -13,6 +13,8 @@ const ModalFormularioTarea = () => {
     const [descripcion, setDescripcion] = useState('')
     const [fechaEntrega, setFechaEntrega] = useState('')
     const [prioridad, setPrioridad] = useState('')
+    
+    
 
     const params = useParams()
 
