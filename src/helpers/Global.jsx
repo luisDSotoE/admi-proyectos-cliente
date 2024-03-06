@@ -1,3 +1,3 @@
 export const Global = {
-  url: "http://localhost:4000/api/",
+  url: "https://admin-proyectos-3ged.onrender.com/api/",
 };
