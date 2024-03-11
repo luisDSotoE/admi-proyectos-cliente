@@ -91,7 +91,7 @@ export function Kanban() {
   return (
     <div className="container mx-auto p-4">
       <DragDropContext onDragEnd={onDragEnd}>
-        <div className="flex flex-col sm:flex-row justify-between gap-4 text-violet-700 ">
+        <div className="flex flex-col sm:flex-row justify-between gap-2 text-violet-700 ">
           <Column id="por-hacer" tasks={porHacer} title="Por hacer" />
           <Column id="en-progreso" tasks={enProgreso} title="En progreso" />
           <Column id="completada" tasks={completadas} title="Completadas" />

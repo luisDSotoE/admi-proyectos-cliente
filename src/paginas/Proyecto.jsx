@@ -118,7 +118,7 @@ const Proyecto = () => {
       </h2>
       <div
         style={{ width: 100, height: 100 }}
-        className="lg:absolute lg:top-44 lg:right-72 lg:mt-4 sm: m-auto "
+        className="lg:absolute lg:top-48 lg:right-72 lg:mt-4 sm: m-auto "
       >
         <CircularProgressbar
           value={percentageCompleted}

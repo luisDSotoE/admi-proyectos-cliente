@@ -85,7 +85,7 @@ export const EditarPerfil = () => {
       <h2 className="font-black text-3xl text-center">Editar Perfil</h2>
       <p className="text-xl mt-5 mb-10 text-center">Modifica tus Datos</p>
       <div className="flex justify-center">
-        <div className="w-full md:w-1/2 bg-indigo-600 shadow rounded-lg p-5">
+        <div className="w-full md:w-1/2 bg-formulario shadow rounded-lg p-5">
           {msg && <Alerta alerta={alerta} />}
 
           <div className="px-6 py-4">
