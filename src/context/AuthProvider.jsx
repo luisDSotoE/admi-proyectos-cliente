@@ -66,7 +66,7 @@ const AuthProvider = ({ children }) => {
       };
       setAuth(user);
       return {
-        msg: "Datos actualizados correctamente",
+        msg: "Datos actualizados exitosamente",
       };
     } catch (error) {
       return {

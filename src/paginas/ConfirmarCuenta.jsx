@@ -51,7 +51,7 @@ const ConfirmarCuenta = () => {
             className="block text-center my-5 text-slate-500 uppercase text-sm"
             to="/"
           >
-            Inicia Sesión
+            Iniciar Sesión
           </Link>
         )}
       </div>

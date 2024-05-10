@@ -59,11 +59,11 @@ const Login = () => {
                 <label 
                     className="uppercase text-gray-600 block text-xl font-bold"
                     htmlFor="email"
-                >Email</label>
+                >Correo Electronico</label>
                 <input
                     id="email"
                     type="email"
-                    placeholder="Email de Registro"
+                    placeholder="Ingresar correo electronico"
                     className="w-full mt-3 p-3 border rounded-xl bg-gray-50"
                     value={email}
                     onChange={ e => setEmail(e.target.value)}
@@ -73,11 +73,11 @@ const Login = () => {
                 <label 
                     className="uppercase text-gray-600 block text-xl font-bold"
                     htmlFor="password"
-                >Password</label>
+                >Contraseña</label>
                 <input
                     id="password"
                     type="password"
-                    placeholder="Password de Registro"
+                    placeholder="Ingresar contraseña"
                     className="w-full mt-3 p-3 border rounded-xl bg-gray-50"
                     value={password}
                     onChange={ e => setPassword(e.target.value)}
@@ -101,7 +101,7 @@ const Login = () => {
             <Link 
                 className='block text-center my-5 text-slate-500 uppercase text-sm'
                 to="/olvide-password"
-            >Olvide Mi Password</Link>
+            >Recuperar Mi Contraseña</Link>
         </nav>
     
     </>

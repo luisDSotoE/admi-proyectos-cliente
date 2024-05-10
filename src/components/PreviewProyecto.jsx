@@ -29,7 +29,7 @@ const PreviewProyecto = ({proyecto}) => {
             <Link
                 to={`${_id}`}
                 className='text-gray-600 hover:text-gray-800 uppercase text-sm font-bold'
-            >Ver Proyecto</Link>
+            >Mostrar</Link>
         </div>
     )
 }

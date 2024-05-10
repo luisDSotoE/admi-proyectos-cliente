@@ -33,7 +33,7 @@ const NuevoPassword = () => {
 
         if(password.length < 6) {
             setAlerta({
-                msg: 'El Password debe ser minimo de 6 caracteres',
+                msg: 'La contraseña permite minimo 6 caracteres',
                 error: true
             })
             return
@@ -60,7 +60,7 @@ const NuevoPassword = () => {
         
     return (
         <>
-            <h1 className="text-sky-600 font-black text-6xl capitalize">Reestablece tu password y no pierdas acceso a tus {''}
+            <h1 className="text-sky-600 font-black text-6xl capitalize">Recupera tu contraseña y no pierdas acceso a tus {''}
                 <span className="text-slate-700">proyectos</span>
             </h1>
 
@@ -76,11 +76,11 @@ const NuevoPassword = () => {
                         <label 
                             className="uppercase text-gray-600 block text-xl font-bold"
                             htmlFor="password"
-                        >Nuevo Password</label>
+                        >Nueva Contraseña</label>
                         <input
                             id="password"
                             type="password"
-                            placeholder="Escribe tu Nuevo Password"
+                            placeholder="Ingresar nueva contraseña"
                             className="w-full mt-3 p-3 border rounded-xl bg-gray-50"
                             value={password}
                             onChange={e => setPassword(e.target.value)}
@@ -88,7 +88,7 @@ const NuevoPassword = () => {
                     </div>
                     <input 
                         type="submit"
-                        value="Guardar Nuevo Password"
+                        value="Aceptar"
                         className="bg-sky-700 mb-5 w-full py-3 text-white uppercase font-bold rounded hover:cursor-pointer hover:bg-sky-800 transition-colors"
                     />
                     
@@ -99,7 +99,7 @@ const NuevoPassword = () => {
                     <Link 
                         className='block text-center my-5 text-slate-500 uppercase text-sm'
                         to="/"
-                    >Inicia Sesión</Link>
+                    >Iniciar Sesión</Link>
             )}
         </>
     )

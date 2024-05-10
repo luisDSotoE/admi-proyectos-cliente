@@ -67,7 +67,7 @@ const ModalEliminarTarea = () => {
                                     </Dialog.Title>
                                     <div className='mt-2'>
                                         <p className='text-sm text-gray-500'>
-                                            Una tarea eliminada no se podrá recuperar
+                                            La tarea no se podrá recuperar
                                         </p>
                                     </div>
 

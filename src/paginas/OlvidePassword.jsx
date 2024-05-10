@@ -57,11 +57,11 @@ const OlvidePassword = () => {
                     <label 
                         className="uppercase text-gray-600 block text-xl font-bold"
                         htmlFor="email"
-                    >Email</label>
+                    >Correo Electronico</label>
                     <input
                         id="email"
                         type="email"
-                        placeholder="Email de Registro"
+                        placeholder="Ingresar correo electronico"
                         className="w-full mt-3 p-3 border rounded-xl bg-gray-50"
                         value={email}
                         onChange={ e => setEmail(e.target.value)}
@@ -71,7 +71,7 @@ const OlvidePassword = () => {
 
                 <input 
                     type="submit"
-                    value="Enviar Instrucciones"
+                    value="Aceptar"
                     className="bg-sky-700 mb-5 w-full py-3 text-white uppercase font-bold rounded hover:cursor-pointer hover:bg-sky-800 transition-colors"
                 />
                 
@@ -81,7 +81,7 @@ const OlvidePassword = () => {
                 <Link 
                     className='block text-center my-5 text-slate-500 uppercase text-sm'
                     to="/"
-                >¿Ya tienes una cuenta? Inicia Sesión</Link>
+                >¿Ya tienes una cuenta? Iniciar Sesión</Link>
 
                 <Link 
                     className='block text-center my-5 text-slate-500 uppercase text-sm'

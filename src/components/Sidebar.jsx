@@ -33,7 +33,7 @@ const Sidebar = () => {
         to="perfil"
         className="bg-botoncolor w-full p-2 text-white uppercase font-bold block mt-5 text-center rounded-lg hover:bg-violet-700  transition-colors"
       >
-        Perfil
+        Cuenta
       </Link>
       <Link
         to="crear-proyecto"

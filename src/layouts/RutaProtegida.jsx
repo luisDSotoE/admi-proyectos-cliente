@@ -5,7 +5,9 @@ import Sidebar from "../components/Sidebar";
 
 const RutaProtegida = () => {
   const { auth, cargando } = useAuth();
+
   if (cargando) return "Cargando...";
+
   return (
     <>
       {auth._id ? (
