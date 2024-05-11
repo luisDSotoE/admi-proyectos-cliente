@@ -114,7 +114,7 @@ const Proyecto = () => {
         )}
       </div>
       <h2 className="font-bold text-center lg:relative left-56 text-blue-600 ">
-        Estado Proyecto
+        Estado del Proyecto
       </h2>
       <div
         style={{ width: 100, height: 100 }}
@@ -160,7 +160,7 @@ const Proyecto = () => {
           type="button"
           onClick={handleMostrar}
           className="bg-violet-600 p-4  rounded font-bold uppercase text-white hover:bg-violet-700 transition-colors "
-          value={"Ver Tablero"}
+          value={"Mostrar Tablero"}
         />
       )}
 
@@ -177,7 +177,7 @@ const Proyecto = () => {
           ))
         ) : (
           <p className="text-center my-5 p-10">
-            No hay tareas en este proyecto
+            No se encuentran tareas...
           </p>
         )}
       </div>
@@ -201,7 +201,7 @@ const Proyecto = () => {
               ))
             ) : (
               <p className="text-center my-5 p-10">
-                No hay Colaboradores en este proyecto
+                No se encuentran colaboradores...
               </p>
             )}
           </div>

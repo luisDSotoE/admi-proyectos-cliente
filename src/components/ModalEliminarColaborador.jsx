@@ -67,7 +67,7 @@ const modalEliminarColaborador = () => {
                                     </Dialog.Title>
                                     <div className='mt-2'>
                                         <p className='text-sm text-gray-500'>
-                                            Una vez eliminado, esta persona no podrá acceder al proyecto
+                                            El colaborador no tendra más acceso al proyecto
                                         </p>
                                     </div>
 

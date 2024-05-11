@@ -25,16 +25,18 @@ const Header = () => {
         </h2>
 
         <div className="flex flex-col md:flex-row items-center gap-4">
+
+          <Link to="/proyectos" className="font-bold uppercase  text-letras">
+            Proyectos
+          </Link>
+
           <button
             type="button"
             className="font-bold uppercase text-letras"
             onClick={handleBuscador}
           >
-            Buscar Proyecto
+            Buscar
           </button>
-          <Link to="/proyectos" className="font-bold uppercase  text-letras">
-            Proyectos
-          </Link>
 
           <button
             type="button"

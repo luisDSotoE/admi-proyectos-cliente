@@ -113,7 +113,7 @@ const ModalFormularioTarea = () => {
                             <div className="sm:flex sm:items-start">
                                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
                                     <Dialog.Title as="h3" className="text-lg leading-6 font-bold text-gray-900">
-                                        {id ? 'Editar Tarea': 'Crear Tarea'}
+                                        {id ? 'Editar Tarea': 'Añadir Tarea'}
                                     </Dialog.Title>
 
                                     {msg && <Alerta alerta={alerta} />}
@@ -127,12 +127,12 @@ const ModalFormularioTarea = () => {
                                                 className='text-gray-700 uppercase font-bold text-sm' 
                                                 htmlFor='nombre'
                                             >
-                                                Nombre Tarea
+                                                Nombre
                                             </label>
                                             <input
                                                 type="text"
                                                 id="nombre"
-                                                placeholder='Nombre de la Tarea'
+                                                placeholder='Ingresar nombre'
                                                 className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md'
                                                 value={nombre}
                                                 onChange={e => setNombre(e.target.value)}
@@ -144,11 +144,11 @@ const ModalFormularioTarea = () => {
                                                 className='text-gray-700 uppercase font-bold text-sm' 
                                                 htmlFor='descripcion'
                                             >
-                                                Descripción Tarea
+                                                Descripción
                                             </label>
                                             <textarea
                                                 id="descripcion"
-                                                placeholder='Descripción de la Tarea'
+                                                placeholder='Ingresar descripción'
                                                 className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md'
                                                 value={descripcion}
                                                 onChange={e => setDescripcion(e.target.value)}
@@ -160,7 +160,7 @@ const ModalFormularioTarea = () => {
                                                 className='text-gray-700 uppercase font-bold text-sm' 
                                                 htmlFor='fecha-entrega'
                                             >
-                                               Fecha Entrega
+                                               Fecha de Entrega
                                             </label>
                                             <input
                                                 type="date"
@@ -184,7 +184,7 @@ const ModalFormularioTarea = () => {
                                                 value={prioridad}
                                                 onChange={e => setPrioridad(e.target.value)}
                                             >
-                                                <option value="">-- Seleccionar --</option>
+                                                <option value="">Seleccionar</option>
 
                                                 {PRIORIDAD.map( opcion => (
                                                     <option key={opcion}>{opcion}</option>
@@ -196,7 +196,7 @@ const ModalFormularioTarea = () => {
                                         <input
                                             type="submit"
                                             className='bg-sky-600 hover:bg-sky-700 w-full p-3 text-white uppercase font-bold cursor-pointer transition-colors rounded text-sm'
-                                            value={ id ? 'Guardar Cambios': 'Crear Tarea'}
+                                            value='GUARDAR'
                                         />
 
                                     </form>

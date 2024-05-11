@@ -18,13 +18,12 @@ const NuevoColaborador = () => {
 
   return (
     <>
-      <h1 className="text-4xl font-black">Añadir Colaborador(a) al Proyecto: {proyecto.nombre}</h1>
+      <h1 className="text-4xl font-black">Añadir Colaborador(a) a {proyecto.nombre}</h1>
 
 
       <div className="mt-10 flex justify-center">
         <FormularioColaborador />
       </div>
-
 
       {cargando ? <p className="text-center">cargando...</p> : colaborador?._id && (
         <div className='flex justify-center mt-10'>
@@ -40,7 +39,7 @@ const NuevoColaborador = () => {
                     onClick={() => agregarColaborador({
                       email: colaborador.email
                     })}
-                  >Agregar al Proyecto</button>
+                  >Añadir</button>
                 </div>
             </div>
         </div>

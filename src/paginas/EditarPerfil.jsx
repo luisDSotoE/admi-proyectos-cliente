@@ -18,7 +18,7 @@ export const EditarPerfil = () => {
 
     if ([nombre, email].includes("")) {
       setAlerta({
-        msg: "Email y Nombre son obligatorios",
+        msg: "Todos los campos son obligatorios",
         error: true,
       });
       return;
@@ -58,7 +58,7 @@ export const EditarPerfil = () => {
         setAuth(user);
         // setPerfil(user);
         setAlerta({
-          msg: "Foto Actualizada correctamente",
+          msg: "Foto actualizada exitosamente",
           error: false,
         });
         setTimeout(() => {
@@ -82,8 +82,8 @@ export const EditarPerfil = () => {
 
   return (
     <>
-      <h2 className="font-black text-3xl text-center">Editar Perfil</h2>
-      <p className="text-xl mt-5 mb-10 text-center">Modifica tus Datos</p>
+      <h2 className="font-black text-3xl text-center">EDITAR CUENTA</h2>
+      <p className="text-xl mt-5 mb-10 text-center">Modificar Datos</p>
       <div className="flex justify-center">
         <div className="w-full md:w-1/2 bg-formulario shadow rounded-lg p-5">
           {msg && <Alerta alerta={alerta} />}
@@ -112,7 +112,7 @@ export const EditarPerfil = () => {
               className="bg-indigo-700 hover:bg-indigo-800 transition-colors px-10 py-3 text-center cursor-pointer font-bold text-white rounded-lg uppercase w-full mt-5 "
               onClick={handleImage}
             >
-              Editar Foto
+              Cambiar Foto
             </button>
           )}
 
@@ -124,6 +124,7 @@ export const EditarPerfil = () => {
                 className="border bg-gray-50 w-full p-2 mt-5 rounded-lg"
                 name="nombre"
                 value={perfil.nombre || ""}
+                placeholder='Ingresar nombre'
                 onChange={(e) =>
                   setPerfil({
                     ...perfil,
@@ -133,12 +134,13 @@ export const EditarPerfil = () => {
               />
             </div>
             <div className="my-3">
-              <label className="uppercase font-bold text-white">Email</label>
+              <label className="uppercase font-bold text-white">Correo Electronico</label>
               <input
                 type="email"
                 className="border bg-gray-50 w-full p-2 mt-5 rounded-lg"
                 name="email"
                 value={perfil.email || ""}
+                placeholder='Ingresar correo electronico'
                 onChange={(e) =>
                   setPerfil({
                     ...perfil,
@@ -149,7 +151,7 @@ export const EditarPerfil = () => {
             </div>
             <input
               type="submit"
-              value="Guardar Cambios"
+              value="Guardar"
               className="bg-indigo-700 hover:bg-indigo-800 transition-colors px-10 py-3 text-center cursor-pointer font-bold text-white rounded-lg uppercase w-full mt-5 "
             />
           </form>
