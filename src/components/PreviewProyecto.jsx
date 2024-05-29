@@ -1,18 +1,20 @@
 import { Link } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
+import {useEffect, useState} from "react";
 
 const PreviewProyecto = ({proyecto}) => {
 
     const { auth } = useAuth();
 
-    const { nombre, _id, cliente, creador} = proyecto;
+    const [percentageCompleted, setPercentageCompleted] = useState(0);
 
-    const tasks = proyecto.tareas ? proyecto.tareas : [];
-
-    const completedTasks = tasks.filter((task) => task.estado);
-
-    const percentage = ((completedTasks.length / tasks.length) * 100).toFixed(2);
+    useEffect(() => {
+        const tasks = proyecto.tareas ? proyecto.tareas : [];
+        const completedTasks = tasks.filter((task) => task.estado);
+        const percentage = (completedTasks.length / tasks.length) * 100;
+        setPercentageCompleted(percentage.toFixed(2));
+    }, [proyecto.tareas]);
 
     return (
         <div className='border-b p-5 flex flex-col md:flex-row justify-between'>
@@ -31,16 +33,18 @@ const PreviewProyecto = ({proyecto}) => {
                 )}
             </div>
 
-            <CircularProgressbar
-                value={Number(percentage) || 0}
-                styles={buildStyles({
-                    pathTransitionDuration: 1,
-                    pathColor: "#3b82f6",
-                    textColor: "#3b82f6",
-                    transition: "stroke-dashoffset 0.5s ease 0s",
-                })}
-                text={`${percentage}%`}
-            />
+            <div className='h-full w-full'>
+                <CircularProgressbar
+                    value={percentageCompleted}
+                    styles={buildStyles({
+                        pathTransitionDuration: 1,
+                        pathColor: "#3b82f6",
+                        textColor: "#3b82f6",
+                        transition: "stroke-dashoffset 0.5s ease 0s",
+                    })}
+                    text={`${percentageCompleted}%`}
+                />
+            </div>
 
             <Link
                 to={`${_id}`}
