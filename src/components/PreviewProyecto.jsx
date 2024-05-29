@@ -7,6 +7,8 @@ const PreviewProyecto = ({proyecto}) => {
 
     const { auth } = useAuth();
 
+    const { nombre, _id, cliente, creador} = proyecto;
+
     const [percentageCompleted, setPercentageCompleted] = useState(0);
 
     useEffect(() => {
@@ -35,7 +37,7 @@ const PreviewProyecto = ({proyecto}) => {
 
             <div className='h-full w-full'>
                 <CircularProgressbar
-                    value={percentageCompleted}
+                    value={Number(percentageCompleted) || 0}
                     styles={buildStyles({
                         pathTransitionDuration: 1,
                         pathColor: "#3b82f6",
