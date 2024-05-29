@@ -11,7 +11,7 @@ const PreviewProyecto = ({proyecto}) => {
 
     const [percentageCompleted, setPercentageCompleted] = useState(0);
 
-    console.log(proyecto.tareas);
+    console.log(proyecto);
 
     useEffect(() => {
         const tasks = proyecto.tareas ? proyecto.tareas : [];
