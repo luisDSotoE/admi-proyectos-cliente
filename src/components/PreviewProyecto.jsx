@@ -11,12 +11,14 @@ const PreviewProyecto = ({proyecto}) => {
 
     const [percentageCompleted, setPercentageCompleted] = useState(0);
 
+    console.log(proyecto.tareas);
+
     useEffect(() => {
         const tasks = proyecto.tareas ? proyecto.tareas : [];
         const completedTasks = tasks.filter((task) => task.estado);
         const percentage = (completedTasks.length / tasks.length) * 100;
         setPercentageCompleted(percentage.toFixed(2));
-    }, [proyecto.tareas]);
+    }, []);
 
     return (
         <div className='border-b p-5 flex flex-col md:flex-row justify-between'>
@@ -35,7 +37,7 @@ const PreviewProyecto = ({proyecto}) => {
                 )}
             </div>
 
-            <div className='h-10 w-10'>
+            <div className='h-20 w-20'>
                 <CircularProgressbar
                     value={percentageCompleted}
                     styles={buildStyles({
