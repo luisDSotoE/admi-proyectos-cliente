@@ -35,9 +35,9 @@ const PreviewProyecto = ({proyecto}) => {
                 )}
             </div>
 
-            <div className='h-full w-full'>
+            <div className='h-10 w-10'>
                 <CircularProgressbar
-                    value={Number(percentageCompleted) || 0}
+                    value={percentageCompleted}
                     styles={buildStyles({
                         pathTransitionDuration: 1,
                         pathColor: "#3b82f6",
