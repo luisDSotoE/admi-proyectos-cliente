@@ -2,23 +2,13 @@ import { Link } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import {useEffect, useState} from "react";
+import useProyectos from "../hooks/useProyectos";
 
 const PreviewProyecto = ({proyecto}) => {
 
     const { auth } = useAuth();
 
     const { nombre, _id, cliente, creador} = proyecto;
-
-    const [percentageCompleted, setPercentageCompleted] = useState(0);
-
-    console.log(proyecto);
-
-    useEffect(() => {
-        const tasks = proyecto.tareas ? proyecto.tareas : [];
-        const completedTasks = tasks.filter((task) => task.estado);
-        const percentage = (completedTasks.length / tasks.length) * 100;
-        setPercentageCompleted(percentage.toFixed(2));
-    }, []);
 
     return (
         <div className='border-b p-5 flex flex-col md:flex-row justify-between'>
@@ -35,19 +25,6 @@ const PreviewProyecto = ({proyecto}) => {
                 {auth._id !== creador && (
                     <p className='p-1 text-xs rounded-lg text-white bg-green-500 font-bold uppercase'>Colaborador</p>
                 )}
-            </div>
-
-            <div className='h-20 w-20'>
-                <CircularProgressbar
-                    value={percentageCompleted}
-                    styles={buildStyles({
-                        pathTransitionDuration: 1,
-                        pathColor: "#3b82f6",
-                        textColor: "#3b82f6",
-                        transition: "stroke-dashoffset 0.5s ease 0s",
-                    })}
-                    text={`${percentageCompleted}%`}
-                />
             </div>
 
             <Link

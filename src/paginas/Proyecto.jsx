@@ -33,6 +33,8 @@ const Proyecto = () => {
   const [percentageCompleted, setPercentageCompleted] = useState(0);
   const [mostrar, setMostrar] = useState(false);
 
+  console.log(proyecto);
+
   useEffect(() => {
     obtenerProyecto(params.id);
   }, []);

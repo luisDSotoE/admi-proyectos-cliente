@@ -5,7 +5,7 @@ import useProyectos from "../hooks/useProyectos.jsx";
 import clienteAxios from "../config/clienteAxios.jsx";
 
 export function Kanban() {
-  const { proyecto } = useProyectos();
+  const { proyecto, cambiarEstadoTarea } = useProyectos();
   const [porHacer, setPorHacer] = useState([]);
   const [enProgreso, setEnProgreso] = useState([]);
   const [completadas, setCompletadas] = useState([]);
@@ -54,6 +54,9 @@ export function Kanban() {
         { estadoTask: destination.droppableId },
         config
       );
+
+      removed.estadotask = destination.droppableId;
+      cambiarEstadoTarea(removed);
     } catch (error) {
       console.error("Error al actualizar el estado en el backend:", error);
     }
@@ -107,7 +110,7 @@ const Column = ({ id, tasks, title }) => {
       {(provided) => (
         <div
           {...provided.droppableProps}
-          className="flex-1 bg-gray-200 rounded-lg p-4"
+          className="flex-1 bg-gray-200 rounded-lg p-4 min-w-[200px] max-w-[400px] overflow-hidden"
           ref={provided.innerRef}
         >
           <div className="text-xl font-bold mb-4">{title}</div>
